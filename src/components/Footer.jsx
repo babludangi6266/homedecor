@@ -13,16 +13,16 @@ const stagger = {
 
 export default function Footer() {
   return (
-    <footer className="relative bg-black/50 backdrop-blur-3xl border-t border-white/5 text-white overflow-hidden" id="footer">
-      
+    <footer className="relative bg-black/100 backdrop-blur-3xl border-t border-white/10 text-white overflow-hidden" id="footer">
+
       {/* ── Immersive Glow Effects ── */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-50" />
       <div className="absolute -top-[300px] left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-primary/20 rounded-full blur-[140px] pointer-events-none mix-blend-screen" />
 
-      <div className="container-wide pt-24 md:pt-32 pb-12 relative z-10">
-        
+      <div className="container-wide pt-16 md:pt-20 pb-8 relative z-10">
+
         {/* ── Links & Info Grid ── */}
-        <motion.div 
+        <motion.div
           initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
           className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 pt-4 md:pt-8"
         >
@@ -71,12 +71,12 @@ export default function Footer() {
           </div>
         </motion.div>
 
-        {/* ── Bottom Marquee & Copyright ── */}
-        <motion.div 
+        {/* ── Copyright ── */}
+        <motion.div
           initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-          className="mt-24 md:mt-32 pt-8 border-t border-white/10 flex flex-col items-center"
+          className="mt-16 md:mt-20 pt-8 border-t border-white/10 flex flex-col items-center"
         >
-          <div className="w-full flex flex-col md:flex-row items-center justify-between gap-6 mb-12 px-2">
+          <div className="w-full flex flex-col md:flex-row items-center justify-between gap-6 mb-4 px-2">
             <div className="flex gap-8">
               {['Privacy Policy', 'Terms of Service'].map((link) => (
                 <a key={link} href="#" className="type-caps text-[9px] text-white/30 hover:text-white transition-colors tracking-widest">
@@ -88,15 +88,8 @@ export default function Footer() {
               © 2026 Home Decor Express. All rights reserved.
             </p>
           </div>
-          
-          {/* Stunning Full-width Brand Signature */}
-          <div className="w-full overflow-hidden flex justify-center opacity-5 select-none pointer-events-none">
-            <h1 className="text-[12vw] leading-none font-display font-bold tracking-tighter whitespace-nowrap">
-              HOME DECOR EXPRESS
-            </h1>
-          </div>
         </motion.div>
-        
+
       </div>
     </footer>
   );
