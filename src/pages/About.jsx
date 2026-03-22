@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 // Animation variants
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 1, 0.5, 1] } }
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 1, 0.5, 1] } }
 };
 
 const stagger = {
@@ -36,24 +36,24 @@ export default function About() {
 
   return (
     <div className="bg-bg min-h-screen relative overflow-hidden">
-      
+
       {/* ═══════════════════ IMMERSIVE HERO ═══════════════════ */}
       <section ref={heroRef} className="relative h-screen min-h-[700px] w-full flex items-center justify-center overflow-hidden">
         {/* Background Parallax Image */}
-        <motion.div 
+        <motion.div
           className="absolute inset-0 w-full h-[120%] -top-[10%]"
           style={{ scale: heroImgScale, opacity: heroOpacity }}
         >
-          <img 
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=2000&q=80" 
-            alt="Beautiful serene interior" 
+          <img
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=2000&q=80"
+            alt="Beautiful serene interior"
             className="w-full h-full object-cover brightness-[0.65]"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-bg" />
         </motion.div>
 
         {/* Hero Text */}
-        <motion.div 
+        <motion.div
           className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-24"
           style={{ y: heroTextY, opacity: heroOpacity }}
           initial="hidden" animate="visible" variants={stagger}
@@ -68,18 +68,18 @@ export default function About() {
             <span className="text-white/70 italic font-light font-serif">for the modern home.</span>
           </motion.h1>
           <motion.p variants={fadeUp} className="type-body text-white/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            Home Decor Express was founded on a simple belief: that your home should be your sanctuary. We partner directly with master artisans to bring you pieces that are as intentional as they are beautiful.
+            AURÉA Living was founded on a simple belief: that your home should be your sanctuary. We partner directly with master artisans to bring you pieces that are as intentional as they are beautiful.
           </motion.p>
         </motion.div>
 
         {/* Scroll Indicator */}
-        <motion.div 
+        <motion.div
           className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4"
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1, duration: 1 }}
         >
           <span className="type-caps text-[10px] text-white/50 tracking-widest">Scroll to discover</span>
           <div className="w-[1px] h-16 bg-white/20 overflow-hidden relative">
-            <motion.div 
+            <motion.div
               className="absolute top-0 left-0 w-full h-1/2 bg-white"
               animate={{ top: ['-50%', '100%'] }}
               transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
@@ -91,7 +91,7 @@ export default function About() {
       {/* ═══════════════════ INTERACTIVE VALUES GRID ═══════════════════ */}
       <section className="py-24 md:py-32 bg-bg relative z-20">
         <div className="container-wide">
-          <motion.div 
+          <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={stagger}
             className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12"
           >
@@ -100,7 +100,7 @@ export default function About() {
               { title: "Radical Transparency", text: "From the forest floor to your living room door, we track the entire lifecycle of our materials to guarantee ethical sourcing.", icon: "M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" },
               { title: "Artisan Empowerment", text: "We cut out the middlemen so the exceptionally talented craftspeople forming your furniture receive the premium wages they deserve.", icon: "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" }
             ].map((val, i) => (
-              <motion.div 
+              <motion.div
                 key={i} variants={fadeUp}
                 whileHover={{ scale: 1.03, y: -10 }}
                 className="bg-bg-section border border-border/50 rounded-2xl p-8 md:p-12 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] transition-all duration-500 cursor-default group"
@@ -119,10 +119,10 @@ export default function About() {
       {/* ═══════════════════ PARALLAX STORY BLOCKS ═══════════════════ */}
       <section className="pb-24 md:pb-32 bg-bg overflow-hidden">
         <div className="container-wide space-y-32 md:space-y-48">
-          
+
           {/* Block 1: Craftsmanship */}
           <div ref={block1Ref} className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.8 }}
               className="aspect-[4/5] md:aspect-[3/4] overflow-hidden rounded-2xl bg-bg-section relative"
             >
@@ -134,8 +134,8 @@ export default function About() {
               />
               <div className="absolute inset-0 ring-1 ring-inset ring-black/5 rounded-2xl pointer-events-none" />
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.8 }}
               className="max-w-xl"
             >
@@ -155,7 +155,7 @@ export default function About() {
 
           {/* Block 2: Sustainability */}
           <div ref={block2Ref} className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.8 }}
               className="order-2 md:order-1 max-w-xl md:ml-auto"
             >
@@ -171,14 +171,14 @@ export default function About() {
                 We are constantly refining our packaging to eliminate single-use plastics and neutralize our shipping footprint, ensuring our commitment to the Earth matches our commitment to your home.
               </p>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.8 }}
               className="order-1 md:order-2 aspect-[4/5] md:aspect-[3/4] overflow-hidden rounded-2xl bg-bg-section relative"
             >
               <motion.img
                 style={{ y: b2ImgY }}
-                src="https://images.unsplash.com/photo-1602628525144-56e8e2b79c78?w=1200&q=80"
+                src="https://images.unsplash.com/photo-1636897534807-aac3e306da6e?w=1200&q=80"
                 alt="Sustainable materials"
                 className="absolute inset-0 w-full h-[140%] -top-[20%] object-cover grayscale opacity-90 hover:grayscale-0 transition-all duration-700"
               />
@@ -190,17 +190,28 @@ export default function About() {
       </section>
 
       {/* ═══════════════════ SCROLLING MARQUEE ═══════════════════ */}
-      <section className="py-24 border-y border-border/50 bg-[#faf7f4] overflow-hidden">
-        <motion.div 
-          className="flex whitespace-nowrap opacity-20 hover:opacity-100 transition-opacity duration-700"
-          style={{ x: marqueeX }}
+      <section className="py-8 md:py-8 border-y border-border/50 bg-[#faf7f4] overflow-hidden flex w-full">
+        <motion.div
+          className="flex whitespace-nowrap opacity-25 hover:opacity-100 transition-[opacity,transform] duration-700 w-max"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ ease: "linear", duration: 35, repeat: Infinity }}
         >
-          <h2 className="text-[6rem] md:text-[10rem] font-display font-medium tracking-tighter leading-none px-12">
-            DESIGNED WITH INTENTION &mdash; CRAFTED WITH PASSION &mdash; BUILT FOR GENERATIONS &mdash; 
-          </h2>
-          <h2 className="text-[6rem] md:text-[10rem] font-display font-medium tracking-tighter leading-none px-12">
-            DESIGNED WITH INTENTION &mdash; CRAFTED WITH PASSION &mdash; BUILT FOR GENERATIONS &mdash; 
-          </h2>
+          {/* First block (50% of the width) */}
+          <div className="flex">
+            {[...Array(4)].map((_, i) => (
+              <h2 key={`m1-${i}`} className="text-[5rem] md:text-[8rem] lg:text-[10rem] font-display font-medium tracking-tighter leading-none px-6">
+                DESIGNED WITH INTENTION &mdash; CRAFTED WITH PASSION &mdash; BUILT FOR GENERATIONS &mdash;
+              </h2>
+            ))}
+          </div>
+          {/* Second identical block (50% of the width) */}
+          <div className="flex">
+            {[...Array(4)].map((_, i) => (
+              <h2 key={`m2-${i}`} className="text-[5rem] md:text-[8rem] lg:text-[10rem] font-display font-medium tracking-tighter leading-none px-6">
+                DESIGNED WITH INTENTION &mdash; CRAFTED WITH PASSION &mdash; BUILT FOR GENERATIONS &mdash;
+              </h2>
+            ))}
+          </div>
         </motion.div>
       </section>
 
